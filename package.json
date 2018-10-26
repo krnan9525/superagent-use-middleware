@@ -1,0 +1,27 @@
+{
+  "name": "superagent-use-middleware",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npm run test",
+    "compile": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krnan9525/superagent-use-middleware.git"
+  },
+  "author": "Mark Yang <sepyng@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krnan9525/superagent-use-middleware/issues"
+  },
+  "homepage": "https://github.com/krnan9525/superagent-use-middleware#readme",
+  "dependencies": {
+    "@types/superagent": "^3.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.3"
+  }
+}
