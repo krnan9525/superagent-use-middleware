@@ -14,8 +14,9 @@ const request = makeMiddleware(
   ['get', 'post', 'put', 'delete', 'options'] // (optional) methods you want to insert this middleware to 
 )
 
+// example: you want to inject a custom header to all requests
 export default request.use((req) => {
-  req.header['api-version'] = localStorage.getItem('client_version_int')
+  req.header['api-version'] = 10
   return req
 })
 
@@ -25,5 +26,5 @@ export default request.use((req) => {
 
 
 __NOTE:__ This project is based on [superagent-use](https://github.com/koenpunt/superagent-use), adding typescript support,
-removed `node-methods` and `assign` dependencies. Great shoot out to authors of `superagent-use`.
+removed `node-methods` and `assign` dependencies. Great shout out to authors of `superagent-use`.
 
