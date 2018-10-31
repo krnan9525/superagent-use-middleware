@@ -1,10 +1,7 @@
 import {Plugin, SuperAgentStatic} from 'superagent'
+import {SuperAgentCollection} from '../dist'
 
 const superAgentMethods : string[] = ['get', 'post', 'put', 'delete', 'options']
-
-export interface SuperAgentCollection extends SuperAgentStatic {
-  use : ((fn: Plugin) => this)
-}
 
 export default (superAgentInit: SuperAgentStatic, methods: string[] = superAgentMethods) : SuperAgentCollection => {
 
@@ -19,7 +16,11 @@ export default (superAgentInit: SuperAgentStatic, methods: string[] = superAgent
 
   methods.forEach(method => {
     switch (method) {
-      case 'get' || 'post' || 'put' || 'delete' || 'options':
+      case 'get':
+      case 'post':
+      case 'put':
+      case 'delete':
+      case 'options':
         superAgentInternal[method] = function() {
           let singleRequest = superAgentInit[method].apply(superAgentInternal, arguments)
           uses.forEach(function(use) {

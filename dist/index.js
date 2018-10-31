@@ -11,11 +11,11 @@ exports.default = (function (superAgentInit, methods) {
     };
     methods.forEach(function (method) {
         switch (method) {
-          case 'get':
-          case 'post':
-          case 'put':
-          case 'delete':
-          case 'options':
+            case 'get':
+            case 'post':
+            case 'put':
+            case 'delete':
+            case 'options':
                 superAgentInternal[method] = function () {
                     var singleRequest = superAgentInit[method].apply(superAgentInternal, arguments);
                     uses.forEach(function (use) {
